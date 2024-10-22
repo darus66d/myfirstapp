@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Screen2 extends StatelessWidget {
   const Screen2({super.key});
@@ -163,6 +164,7 @@ class Screen2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text("Darus Salam",style: GoogleFonts.italiana(),),
             SizedBox(
                 height: 50,
                 width: double.infinity,
