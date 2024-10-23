@@ -164,7 +164,10 @@ class Screen2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Darus Salam",style: GoogleFonts.italiana(),),
+            Text("Darus Salam",style: GoogleFonts.italiana(
+              fontSize: 26,
+              fontWeight: FontWeight.w900,
+            ),),
             SizedBox(
                 height: 50,
                 width: double.infinity,
