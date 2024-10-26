@@ -159,53 +159,69 @@ class Screen2 extends StatelessWidget {
         automaticallyImplyLeading: true,
         backgroundColor: Colors.green,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("Darus Salam",style: GoogleFonts.italiana(
-              fontSize: 26,
-              fontWeight: FontWeight.w900,
-            ),),
-            SizedBox(
-                height: 50,
-                width: double.infinity,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.white,
-                    ),
-                    onPressed: () {},
-                    child: const Text("Button"))),
-            TextButton(onPressed: (){}, child: const Text("Button2")),
-            OutlinedButton(onPressed: (){
-              DialogBox(context);
-            }, child: const Text("OutlinedButton")),
-            GestureDetector(
-              onTap: (){
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Darus Salam",style: GoogleFonts.italiana(
+                fontSize: 26,
+                fontWeight: FontWeight.w900,
+              ),),
+              SizedBox(
+                  height: 50,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: Colors.white,
+                      ),
+                      onPressed: () {},
+                      child: const Text("Button"))),
+              TextButton(onPressed: (){}, child: const Text("Button2")),
+              OutlinedButton(onPressed: (){
                 DialogBox(context);
-              },
-              child: const Card(
-                color: Colors.blue,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Hello"),
+              }, child: const Text("OutlinedButton")),
+              GestureDetector(
+                onTap: (){
+                  DialogBox(context);
+                },
+                child: const Card(
+                  color: Colors.blue,
+                  child: Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text("Hello"),
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              splashColor: Colors.green,
-              onTap: (){
-                DialogBox(context);
-              },
-              child: const Card(
-                child: Text("Darus"),
+              InkWell(
+                splashColor: Colors.green,
+                onTap: (){
+                  DialogBox(context);
+                },
+                child: const Card(
+                  child: Text("Darus"),
+                )
               )
-            )
-          ],
+            ],
+          ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        onPressed: () {
+        showModalBottomSheet(
+          isScrollControlled: true,
+            context: context,
+            builder: (context){
+          return Container(
+            height: 500,
+          );
+        });
+        },
+        child: Text("Add"),),
+
     );
   }
   DialogBox(BuildContext context){
