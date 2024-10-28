@@ -168,6 +168,7 @@ class Screen2 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 TextField(
+                  style: GoogleFonts.italiana(),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.account_circle),
@@ -175,7 +176,8 @@ class Screen2 extends StatelessWidget {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    hintText: "Enter a text or link",
+                   // hintText: "Enter a text or link",
+                    labelText: "Enter text or link",
                   ),
                 ),
                 Text("Darus Salam",style: GoogleFonts.italiana(
