@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Screen2 extends StatelessWidget {
-  const Screen2({super.key});
+   Screen2({super.key});
+
+  TextEditingController emailTEController = TextEditingController();
+  GlobalKey<FormState> fromkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -163,63 +166,79 @@ class Screen2 extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                TextField(
-                  style: GoogleFonts.italiana(),
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle),
-                    suffixIcon: Icon(Icons.remove_red_eye),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                   // hintText: "Enter a text or link",
-                    labelText: "Enter text or link",
-                  ),
-                ),
-                Text("Darus Salam",style: GoogleFonts.italiana(
-                  fontSize: 26,
-                  fontWeight: FontWeight.w900,
-                ),),
-                SizedBox(
-                    height: 50,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          foregroundColor: Colors.white,
-                        ),
-                        onPressed: () {},
-                        child: const Text("Button"))),
-                TextButton(onPressed: (){}, child: const Text("Button2")),
-                OutlinedButton(onPressed: (){
-                  DialogBox(context);
-                }, child: const Text("OutlinedButton")),
-                GestureDetector(
-                  onTap: (){
-                    DialogBox(context);
-                  },
-                  child: const Card(
-                    color: Colors.blue,
-                    child: Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Text("Hello"),
+            child: Form(
+              key: fromkey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  TextFormField(
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "enter your email";
+                      }
+                      return null;
+                    },
+                    controller: emailTEController,
+                    maxLines: null,
+                    style: GoogleFonts.italiana(),
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.account_circle),
+                      suffixIcon: const Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                     // hintText: "Enter a text or link",
+                      labelText: "Enter text or link",
                     ),
                   ),
-                ),
-                InkWell(
-                  splashColor: Colors.green,
-                  onTap: (){
+                  ElevatedButton(onPressed: (){
+                    if(fromkey.currentState!.validate()){
+                      emailTEController.clear();
+                    };
+                  }, child: Text("Submit")),
+                  Text("Darus Salam",style: GoogleFonts.italiana(
+                    fontSize: 26,
+                    fontWeight: FontWeight.w900,
+                  ),),
+                  SizedBox(
+                      height: 50,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            foregroundColor: Colors.white,
+                          ),
+                          onPressed: () {},
+                          child: const Text("Button"))),
+                  TextButton(onPressed: (){}, child: const Text("Button2")),
+                  OutlinedButton(onPressed: (){
                     DialogBox(context);
-                  },
-                  child: const Card(
-                    child: Text("Darus"),
+                  }, child: const Text("OutlinedButton")),
+                  GestureDetector(
+                    onTap: (){
+                      DialogBox(context);
+                    },
+                    child: const Card(
+                      color: Colors.blue,
+                      child: Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Text("Hello"),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    splashColor: Colors.green,
+                    onTap: (){
+                      DialogBox(context);
+                    },
+                    child: const Card(
+                      child: Text("Darus"),
+                    )
                   )
-                )
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -236,7 +255,7 @@ class Screen2 extends StatelessWidget {
           );
         });
         },
-        child: Text("Add"),),
+        child: const Text("Add"),),
 
     );
   }
@@ -258,3 +277,4 @@ class Screen2 extends StatelessWidget {
   });
 }
 }
+
