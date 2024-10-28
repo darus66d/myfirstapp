@@ -160,51 +160,65 @@ class Screen2 extends StatelessWidget {
         backgroundColor: Colors.green,
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("Darus Salam",style: GoogleFonts.italiana(
-                fontSize: 26,
-                fontWeight: FontWeight.w900,
-              ),),
-              SizedBox(
-                  height: 50,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        foregroundColor: Colors.white,
-                      ),
-                      onPressed: () {},
-                      child: const Text("Button"))),
-              TextButton(onPressed: (){}, child: const Text("Button2")),
-              OutlinedButton(onPressed: (){
-                DialogBox(context);
-              }, child: const Text("OutlinedButton")),
-              GestureDetector(
-                onTap: (){
-                  DialogBox(context);
-                },
-                child: const Card(
-                  color: Colors.blue,
-                  child: Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Text("Hello"),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.account_circle),
+                    suffixIcon: Icon(Icons.remove_red_eye),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    hintText: "Enter a text or link",
                   ),
                 ),
-              ),
-              InkWell(
-                splashColor: Colors.green,
-                onTap: (){
+                Text("Darus Salam",style: GoogleFonts.italiana(
+                  fontSize: 26,
+                  fontWeight: FontWeight.w900,
+                ),),
+                SizedBox(
+                    height: 50,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          foregroundColor: Colors.white,
+                        ),
+                        onPressed: () {},
+                        child: const Text("Button"))),
+                TextButton(onPressed: (){}, child: const Text("Button2")),
+                OutlinedButton(onPressed: (){
                   DialogBox(context);
-                },
-                child: const Card(
-                  child: Text("Darus"),
+                }, child: const Text("OutlinedButton")),
+                GestureDetector(
+                  onTap: (){
+                    DialogBox(context);
+                  },
+                  child: const Card(
+                    color: Colors.blue,
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text("Hello"),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  splashColor: Colors.green,
+                  onTap: (){
+                    DialogBox(context);
+                  },
+                  child: const Card(
+                    child: Text("Darus"),
+                  )
                 )
-              )
-            ],
+              ],
+            ),
           ),
         ),
       ),
