@@ -197,7 +197,7 @@ class Screen2 extends StatelessWidget {
                     if(fromkey.currentState!.validate()){
                       emailTEController.clear();
                     };
-                  }, child: Text("Submit")),
+                  }, child: const Text("Submit")),
                   Text("Darus Salam",style: GoogleFonts.italiana(
                     fontSize: 26,
                     fontWeight: FontWeight.w900,
