@@ -32,29 +32,32 @@ class listview extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Text("Info"),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListView.separated(
-                shrinkWrap: true,
-                primary: false,
-                itemCount: names.length,
-                  itemBuilder: (context,index){
-                return ListTile(
-                  leading: Image.network(urls[index]),
-                  tileColor: Colors.green,
-                  title: Text(names[index],style: TextStyle(color:Colors.white,fontSize: 18),),
-                );
-        
-        
-              }, separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 4,);
-              },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Text("Info"),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  primary: false,
+                  itemCount: names.length,
+                    itemBuilder: (context,index){
+                  return ListTile(
+                    leading: Image.network(urls[index]),
+                    tileColor: Colors.green,
+                    title: Text(names[index],style: TextStyle(color:Colors.white,fontSize: 18),),
+                  );
+
+
+                }, separatorBuilder: (BuildContext context, int index) {
+                    return SizedBox(height: 4,);
+                },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
