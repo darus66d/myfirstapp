@@ -23,7 +23,8 @@ class ProductScreen extends StatelessWidget {
 
 
           Center(child: ElevatedButton(onPressed: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserListScreen()));
+            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>UserListScreen()), (route)=>false);
+          //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserListScreen()));
           }, child: Text("Next"),),),
         ],
       ),
