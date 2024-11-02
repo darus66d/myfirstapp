@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:myfirstapp/screen/custom_widget.dart';
 import 'package:myfirstapp/screen/routing_screen.dart';
 import 'package:myfirstapp/screen/screen2.dart';
 import 'package:myfirstapp/screen/screen3.dart';
@@ -13,7 +14,7 @@ class MyFirstApp extends StatelessWidget {
     return MaterialApp(
       title: "My App",
       debugShowCheckedModeBanner: false,
-      home: RoutingScreen(),
+      home: CustomWidget(),
       themeMode: ThemeMode.system,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
