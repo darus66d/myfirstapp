@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myfirstapp/screen/user_list_screen.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({super.key});
+  final String title;
+  const ProductScreen({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +24,14 @@ class ProductScreen extends StatelessWidget {
 
 
           Center(child: ElevatedButton(onPressed: (){
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>UserListScreen()), (route)=>false);
+            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>UserListScreen()),
+                    (route)=>false);
           //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>UserListScreen()));
           }, child: Text("Next"),),),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(child: Text(title),),
+          )
         ],
       ),
     );

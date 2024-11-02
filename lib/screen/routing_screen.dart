@@ -8,7 +8,7 @@ class RoutingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(child: ElevatedButton(onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (Context)=> ProductScreen()
+        Navigator.push(context, MaterialPageRoute(builder: (Context)=> ProductScreen(title: 'From Routing Screen',)
         ));
 
        // Navigator.push(context, MaterialPageRoute(builder: (Context){return ProductScreen();}));
